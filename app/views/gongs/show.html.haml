@@ -1,0 +1,20 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @gong.name
+%p
+  %b Threshhold:
+  = @gong.threshhold
+%p
+  %b Votes:
+  %span.vote_count= @gong.votes.count
+
+= link_to 'Edit', edit_gong_path(@gong)
+\|
+= link_to 'Reset', reset_votes_gong_path(@gong), :method => :delete, :data => {:confirm => 'Are you sure?' }
+
+- if @gong.can_vote?(current_user)
+  %span.vote-wrapper
+    \|
+    = link_to 'Vote', gong_votes_path(@gong), class: :vote

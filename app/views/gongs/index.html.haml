@@ -1,0 +1,21 @@
+%h1 Listing gongs
+
+%table
+  %tr
+    %th Name
+    %th Threshhold
+    %th
+    %th
+    %th
+
+  - @gongs.each do |gong|
+    %tr
+      %td= gong.name
+      %td= gong.threshhold
+      %td= link_to 'Show', gong
+      %td= link_to 'Edit', edit_gong_path(gong)
+      %td= link_to 'Destroy', gong, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Gong', new_gong_path

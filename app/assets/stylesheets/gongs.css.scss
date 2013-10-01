@@ -1,0 +1,6 @@
+body.gongs.show {
+  background-color: #7CFC00;
+  &.threshold_exceeded {
+    background-color: #FF0000;
+  }
+}

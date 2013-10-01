@@ -1,0 +1,17 @@
+%h1 Listing votes
+
+%table
+  %tr
+    %th Gong
+    %th Session
+    %th
+    %th
+    %th
+
+  - @votes.each do |vote|
+    %tr
+      %td= vote.gong_id
+      %td= vote.session_id
+      %td= link_to 'Show', [vote.gong, vote]
+      %td= link_to 'Edit', edit_gong_vote_path(vote.gong, vote)
+      %td= link_to 'Destroy', [vote.gong, vote], :method => :delete, :data => { :confirm => 'Are you sure?' }

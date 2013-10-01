@@ -1,0 +1,10 @@
+%p#notice= notice
+
+%p
+  %b Gong:
+  = @vote.gong_id
+%p
+  %b Session:
+  = @vote.session_id
+
+= link_to 'Edit', edit_gong_vote_path(@vote.gong, @vote)
